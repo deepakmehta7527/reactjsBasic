@@ -1,14 +1,8 @@
-<!-- install some extension -->
+//state is 'hook'
 
-1)tabnine
-2)prettier
-3)vite(row react means "only react") vs cra(create react app)
-a)first go "vite" website
-b)copy code and paste into terminal
-c)select "react"
-d)select "javascript"
-4)jsx sirf dikhta hai HTML ki tarah par hota nahi
-example-> <h1>hey {2+2}</h1>
-->Result will be :- hey 4
+#state ek data hota hai, react ess data ka khayal rakhta hai,jab bhi ye data change hota hai,react page ko
+updata krta hai
 
-5)how to use conditon rendering 
+example:-maan lete hai aapke game mein score by default 0  se shuru hota hai and future mein wo score badega
+by 10 aur aapko page pe show bhi krna hai jab score bade , to uss case mein aapka score variable ek state mein
+rakhna jaruri hai, kyuki react sirf usse change krta hai jo state mein hota hai
