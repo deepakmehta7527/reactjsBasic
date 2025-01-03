@@ -1,22 +1,30 @@
+import React from 'react'
 
-const card = ({item,index,handleClick}) => {
- const {friends,name,profession,image}=item;
-
+const Card = ({user,handleRemove}) => {
   return (
-    <div className="w-52 bg-white rounded-md overflow-hidden">
-<div className="w-full h-32 bg-sky-200">
-     <img className="w-full h-full object-cover object-[center_top]" src={image} alt="" />
-</div>
-<div className="w-full p-3">
-<h3 className="text-xl font-semibold">{name}</h3>
-<h5 className="text-xs">{profession}</h5>
-<button
-onClick={()=>handleClick(index)}
-className="mt-4 px-3 py-1 text-xs text-white bg-blue-500 font-semibold rounded-md"
->{friends?"Friends":"Add Friend"}</button>
-</div>
+<>
+{
+  user.map((item,index)=>(
+    <div key={index} className='w-52 h-full bg-sky-300 rounded-lg flex flex-col items-center justify-center'>
+    <div className='image w-[3vw] h-[3vw] rounded-full bg-blue-800 overflow-hidden'>
+      <img src={item.image} alt="" />
     </div>
+    <h1 className='bg-slate-50'>{item.name}</h1>
+    <p className='bg-[orange]'>{item.email}</p>
+    {/* yaha pe index as argument pass ho rha hai aur "parent" componet main as "parameter" accept kr rha hai */}
+    <button onClick={()=>handleRemove(index)} className='bg-red-500 px-3 py-3 my-3 rounded-[30%]'>Remove it</button>
+        </div>
+  ))
+}
+</>
+
+
+
+
+
+
+
   )
 }
 
-export default card
+export default Card
