@@ -1,23 +1,26 @@
-import React, { useState } from 'react'
+import { useForm } from "react-hook-form"
 
 const App = () => {
+  // "useForm" provide krta hai khudka "handleSubmit"
+   const {register,handleSubmit}=useForm()
 
-  const [val,setval]=useState({name:"",email:""});
+   // register provide three thing "onBlur","onChange","ref"
 
-  const handlesubmit=(event)=>{
-    event.preventDefault();
-    console.log(val);
-  }
 
   return (
     <div>
-<form onSubmit={handlesubmit}>
-  {/* jab koi input update ho tho uske saat previous value pe effect na pade tho "previous value" store
-   ke saat new value bhi "ui" pe display ho tho ess type se use kre */}
-<input type="text" placeholder='name' onChange={(event)=>setval({...val,name:event.target.value})}/>
-<input type="email" placeholder='email' onChange={(event)=>setval({...val,email:event.target.value})}  />
-<input type="submit" />
+{/*1) "onChange"-> eski help se jo bhi input mein change hoge "useForm" khyal rakh payega
+  2) "ref"->eski help se konsi "input" pe hai uska khyal rakh payega
+  3) "onblur"-> eski help se jo bhi "user" "ui" mein konse input field pe hai woh check kr payega
+*/}
+
+<form onSubmit={handleSubmit(data=>console.log(data))}>
+  {/* spread three thing "onchange","ref","onblur"*/}
+  <input {...register("name")} placeholder="name" type="text" />
+  <input {...register("email")} type="text"  placeholder="email"/>
+  <input type="submit" />
 </form>
+
     </div>
   )
 }

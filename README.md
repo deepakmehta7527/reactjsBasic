@@ -9,5 +9,15 @@ b)controlled components => aap jabhi kuch likho "useState" ke through data real 
 kuch type ho set state kardo nayi value ke barabar
 
 
-c)react hook form
+c)react hook form => ek package hai jo ki "pehle install " krna hota hai "jiska naam hai "react hook form"
+
+
+
+
+
+
+
+
+
+
 
