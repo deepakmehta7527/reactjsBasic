@@ -1,23 +1,18 @@
-form handling=>form submission par website reload ho jaati hai aur react ka main focus  hai ki webpage reload nahi
-hona chahiye ,aggr hota hai tho react use krne ka kya fayada
+<!-- hamare pass multiple component ja pages hote hai tho ek button pe click krne pe dusre page pe jaane
+ke liye "router" ka use kiya jata hai -->
 
-1)we have three way to handle "form"
-a)useRef= ess tareeke mein hum har input ko select kar lete hai and unki value tab nikaalte hai jab form
-submit hota hai
+<!-- kese use kre -->
+a)react-router-dom package install kre
+b)BrowserRouter main "main.js" mein jo "<App/>" usse wrap krde esse pure application ke "router" apply ho jayega
+c) pehle tho "nav" bnaye "Link" ka use krke
+d)"Link" ka use krke "url" set kr skte hai but "ui" page ka component nhi change hota hai esliye "router" ka use
+krke set krna hota hai "url" ke according konse "component" run hona chahiye
+e) uske baad "Routes" mein "Route" ko wrap krke "path" aur "element" de
 
-b)controlled components => aap jabhi kuch likho "useState" ke through data real time par update kar dein jaise hi
-kuch type ho set state kardo nayi value ke barabar
+f)"routes" ka use krke "corresponding URL" ka use krke  "route" ka istemal kiya jata hai aur
+kya open hona chahiye ye bhi bataya jata hai
 
+g)"routes" ko ek alag folder mein rakha jata hai jiska naam "helper" ja "utilites" rakha ja skta hai
+yaha pe aise file ko rakhna hai jo "ui" pe view nhi hote hai just as helper kaam krte hai
 
-c)react hook form => ek package hai jo ki "pehle install " krna hota hai "jiska naam hai "react hook form"
-
-
-
-
-
-
-
-
-
-
-
+h)nav "Link" ko bhi alag file mein rakha jata hai
