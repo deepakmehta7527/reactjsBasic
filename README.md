@@ -1,10 +1,9 @@
-<!-- structure of component -->
-<!-- "cards" and "form" on same level and "card" is child of "cards",all "app" is parent of all component-->
+form handling=>form submission par website reload ho jaati hai aur react ka main focus  hai ki webpage reload nahi
+hona chahiye ,aggr hota hai tho react use krne ka kya fayada
 
-App
-------- cards
------------card
---------form
+1)we have three way to handle "form"
+a)useRef= ess tareeke mein hum har input ko select kar lete hai and unki value tab nikaalte hai jab form
+submit hota hai
+b)controlled components =>
+c)react hook form
 
-
-//props "parent" se "child" ki aur use ki jati hai but "child" se "parent" main use krne ke liye "function" ka use kiya jata hai

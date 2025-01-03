@@ -1,26 +1,25 @@
-import React, { useState } from 'react'
-import Cards from './component/Cards'
-import Form from './component/Form'
+import React, { useRef } from 'react'
 const App = () => {
-  const [users,setUsers]=useState([])
-  const handleFormSubmitData=(data)=>{
-    // yaha pe first already "data" ko copy kiya gya hai uske baad ab jo "data" add hoga example:-name,email,img
-    setUsers([...users,data])
+  // by default pass null it compulsory
+  const surname=useRef(null);
+  const name=useRef(null)
+
+  // ye ek function hai jha pe form ko control ke saat "output" bhi "nikal" skte hia
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    // console.log(name.current.value);
+    console.log(surname.current.value,name.current.value);
   }
 
-  const handleRemove=(id)=>{
-  // yaha pe "setUsers",ek function ka use krke 'users' state pe "filter" apply kiya gya hai
-  setUsers(()=>users.filter((item,index)=>index!=id))
-}
-
-
   return (
-    <div className='w-full h-screen bg-zinc-200 flex items-center justify-center'>
-      <div className='container mx-auto'>
-      <Cards handleRemove={handleRemove} users={users}></Cards>
-      <Form handleFormSubmitData={handleFormSubmitData}></Form>
-      </div>
-    </div>
+    // "onSubmit" se form ko by default referece ko roka ja skta hai
+   <form onSubmit={handleSubmit}>
+    {/* "ref" use krke har ek input ko target kiya jata hai aur jab
+    "form submit" hoga tab input "nikal" skte hai  */}
+    <input ref={name} type="text" placeholder='name' />
+    <input ref={surname} type="text" placeholder='surname' />
+    <input type="submit" />
+   </form>
   )
 }
 
