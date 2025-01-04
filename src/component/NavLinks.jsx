@@ -31,7 +31,10 @@ const NavLinks = () => {
      }
    }
     className='bg-slate-300 ' to="/about">about</NavLink>
+
+    <NavLink to="/user">User</NavLink>
   </nav>
+
     </div>
   )
 }
